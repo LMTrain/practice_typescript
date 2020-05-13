@@ -1,5 +1,14 @@
 const person = {
-    mame: 'Laycon',
-    age: '45'
+    name: 'Laycon',
+    age: 30,
+    hobbies: ["Drawing", 'Swimming']
 };
-console.log(person)
+
+let favoriteActivities: string[];
+favoriteActivities = ['Singing'];
+
+console.log(person.name);
+
+for (const hobby of person.hobbies) {
+    console.log(hobby.toUpperCase());
+}
