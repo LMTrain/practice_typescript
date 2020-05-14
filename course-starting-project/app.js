@@ -1,30 +1,17 @@
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 0] = "ADMIN";
-    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
-    Role[Role["AUTHOR"] = 2] = "AUTHOR";
-})(Role || (Role = {}));
-;
-var person = {
-    // name: string;
-    // age: number;
-    // hobbies: string[];
-    //role: [number, string]; //Tuples
-    // } = {
-    name: 'Laycon',
-    age: 30,
-    hobbies: ["Drawing", 'Swimming'],
-    role: Role.ADMIN
-    //role: [2, 'author'] //Tuples
-};
-//person.role.push('admin');
-var favoriteActivities;
-favoriteActivities = ['Singing'];
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+function merge(input1, input2, //union type
+resultConversion) {
+    var result;
+    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
 }
-if (person.role === Role.ADMIN) {
-    console.log('is Admin');
-}
+var combinedAges = merge(30, 36, 'as-number');
+console.log(combinedAges);
+var combinedStringAges = merge('30', '36', 'as-number');
+console.log(combinedStringAges);
+var combinedNames = merge('Laycon ', 'Muriziq', 'as-text');
+console.log(combinedNames);
