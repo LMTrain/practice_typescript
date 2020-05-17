@@ -1,3 +1,4 @@
+
 function merge(
     input1: number | string, 
     input2: number | string,  //union type
