@@ -1,29 +1,9 @@
-type Combinable = number | string; //union type
-type ConversionDescriptor = 'as-number' | 'as-text';
-
-function merge(
-   input1: Combinable, 
-   input2: Combinable,
-   resultConversion: ConversionDescriptor
-)   {
-   
-   let result;
-   if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
-       result = +input1 + +input2;
-   } else {
-       result = input1.toString() + input2.toString();
-   }    
-   return result;
-
-
-   
+function add(n1: number, n2: number) {
+    return n1 + n2;
 }
 
-const combinedAges = merge(30,36, 'as-number');
-console.log(combinedAges);
+function printResult(num: number): void {
+    console.log('Result: ' + num);
+}
 
-const combinedStringAges = merge('30','36', 'as-number');
-console.log(combinedStringAges);
-
-const combinedNames = merge('Laycon ', 'Muriziq', 'as-text');
-console.log(combinedNames);
+printResult(add(5, 12));
