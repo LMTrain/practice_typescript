@@ -36,8 +36,8 @@ activeHobbies.push(...hobbies);
 console.log(activeHobbies);
 
 const person = {
-    name: "LAycon",
-    age: 30
+    firstName: "LAycon",
+    userAge: 30
 }
 
 const copiedPerson = {...person};
@@ -52,3 +52,12 @@ const adding = (...numbers: number[]) => {
 
 const addedNumbers = adding(5, 10, 2, 3.7);
 console.log("THIS IS ADDEDNUMBERS: " + addedNumbers);
+
+// ARRAY DESTRUCTURING
+const [hobby1, hobby2, ...remainingHobbies] = activeHobbies;
+
+console.log(hobby1, hobby2, activeHobbies);
+
+// OBJECT DESTRUCTURING
+const {firstName: studentName, userAge} = person;
+console.log(studentName, age, person);

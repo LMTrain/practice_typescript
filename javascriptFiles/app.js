@@ -40,8 +40,8 @@ var activeHobbies = __spreadArrays(['Hiking'], hobbies);
 activeHobbies.push.apply(activeHobbies, hobbies);
 console.log(activeHobbies);
 var person = {
-    name: "LAycon",
-    age: 30
+    firstName: "LAycon",
+    userAge: 30
 };
 var copiedPerson = __assign({}, person);
 console.log(copiedPerson);
@@ -56,3 +56,9 @@ var adding = function () {
 };
 var addedNumbers = adding(5, 10, 2, 3.7);
 console.log("THIS IS ADDEDNUMBERS: " + addedNumbers);
+// ARRAY DESTRUCTURING
+var hobby1 = activeHobbies[0], hobby2 = activeHobbies[1], remainingHobbies = activeHobbies.slice(2);
+console.log(hobby1, hobby2, activeHobbies);
+// OBJECT DESTRUCTURING
+var studentName = person.firstName, userAge = person.userAge;
+console.log(studentName, age, person);
