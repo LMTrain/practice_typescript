@@ -27,3 +27,28 @@ if (button) {
     button.addEventListener('click', event => console.log("THIS IS EVENT: " + event));
 }
 printOutput(add(5, 2));
+
+const hobbies = ['Eating', 'Dancing', 'Sexing'];
+const activeHobbies = ['Hiking', ...hobbies];
+
+activeHobbies.push(...hobbies);
+
+console.log(activeHobbies);
+
+const person = {
+    name: "LAycon",
+    age: 30
+}
+
+const copiedPerson = {...person};
+console.log(copiedPerson);
+
+const adding = (...numbers: number[]) => {   
+    return numbers.reduce((currentResult, currentValue) => {
+        return currentResult + currentValue;
+    }, 0);
+
+};
+
+const addedNumbers = adding(5, 10, 2, 3.7);
+console.log("THIS IS ADDEDNUMBERS: " + addedNumbers);
