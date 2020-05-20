@@ -1,5 +1,5 @@
 class Department {
-name; string;
+name: string;
 
     constructor(n: string) {
 
