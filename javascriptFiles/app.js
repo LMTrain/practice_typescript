@@ -21,6 +21,9 @@ var Department = /** @class */ (function () {
         this.employees = [];
         // this.name = n;
     }
+    Department.createEmployee = function (name) {
+        return { name: name };
+    };
     Department.prototype.describe = function () {
         console.log("Department (" + this.id + "): " + this.name);
     };
@@ -31,6 +34,7 @@ var Department = /** @class */ (function () {
         console.log(this.employees.length);
         console.log(this.employees);
     };
+    Department.fiscalYear = 2020;
     return Department;
 }());
 var ITDepartment = /** @class */ (function (_super) {
@@ -81,6 +85,8 @@ var AccountingDepartment = /** @class */ (function (_super) {
     };
     return AccountingDepartment;
 }(Department));
+var employee1 = Department.createEmployee('Max');
+console.log(employee1, Department.fiscalYear);
 var it = new ITDepartment('id', ['Laycon']);
 // const accounting = new Department('id', 'Accounting');
 it.addEmployee('Laycon');
