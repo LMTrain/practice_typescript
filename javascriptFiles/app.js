@@ -67,3 +67,12 @@ objStorage.addItem({ name: "Lima" });
 // ...
 objStorage.removeItem(maxObj);
 console.log(objStorage.getItems());
+function createCourseGoal(title, description, date) {
+    var courseGoal = {};
+    courseGoal.title = title;
+    courseGoal.completeUntil = date;
+    return courseGoal;
+}
+var names = ['Max', 'Anna'];
+// names.push('Manu');
+// names.pop()
