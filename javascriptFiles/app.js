@@ -24,4 +24,8 @@ function countAndDescribe(element) {
     }
     return [element, descriptionText];
 }
-console.log(countAndDescribe('Hi there!'));
+console.log(countAndDescribe(['Sports', 'Cooking']));
+function extractAndConvert(obj, key) {
+    return 'Value: ' + obj[key];
+}
+console.log({ name: "Laycon" }, 'name');

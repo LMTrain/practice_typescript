@@ -32,4 +32,13 @@ function countAndDescribe<T extends lengthy>(element: T): [T, string] {
     return [element, descriptionText];
 }
 
-console.log(countAndDescribe('Hi there!'));
+console.log(countAndDescribe(['Sports', 'Cooking']));
+
+function extractAndConvert<T extends object, U extends keyof T>(
+    obj: T, 
+    key: U
+) {
+    return 'Value: ' + obj[key];
+}
+
+console.log({ name: "Laycon"}, 'name');
