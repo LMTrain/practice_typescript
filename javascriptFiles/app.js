@@ -13,6 +13,7 @@ function Logger(logString) {
 }
 function WithTemplate(template, hookId) {
     return function (constructor) {
+        console.log('Rendering template');
         const hookEl = document.getElementById(hookId);
         const p = new constructor();
         if (hookEl) {
@@ -30,9 +31,37 @@ let Person = /** @class */ (() => {
         }
     };
     Person = __decorate([
+        Logger('LOGGING'),
         WithTemplate('<h1>My Person Object</h1>', 'app')
     ], Person);
     return Person;
 })();
 const pers = new Person();
 console.log(pers);
+function Log(target, propertyName) {
+    console.log('Property decorator');
+    console.log(target, propertyName);
+}
+let Product = /** @class */ (() => {
+    class Product {
+        constructor(t, p) {
+            this.title = t;
+            this._price = p;
+        }
+        set price(val) {
+            if (val > 0) {
+                this._price = val;
+            }
+            else {
+                throw new Error('Invalid price - should be positive!');
+            }
+        }
+        getPriceWithTax(tax) {
+            return this._price * (1 + tax);
+        }
+    }
+    __decorate([
+        Log
+    ], Product.prototype, "title", void 0);
+    return Product;
+})();
